@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Jquery Plugin - Center Align Element</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <style type="text/css">
+      h1 {
+        text-align: center;
+      }
+      .innerCont {
+        border: 1px solid red;
+      }
+      .list-wrap {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+      .list-wrap li {
+        padding: 50px 10px;
+        width: 150px;
+        margin: 5px;
+        background: #fff;
+        display: inline-block;
+        vertical-align: top;
+        text-align: center;
+        -webkit-transition: all 0.3s ease-in-out;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Jquery Plugin - Box Arrangements</h1>
+      <div class="innerCont">
+        <ul class="list-wrap js-listWrap">
+          <li>Box 1 asdfsaldf;jsdaf asdf;lksadfkjsdfa asdf;lkjasdf</li>
+          <li>Box 2</li>
+          <li>Box 3afasdf fasd f</li>
+          <li>Box 4 asdfsadf sadfas dfsaff</li>
+          <li>Box 5</li>
+          <li>Box 4 asdfsadf sadfas dfsaff</li>
+          <li>Box 5</li>
+          <li>Box 4 asdfsadf sadfas dfsaff</li>
+          <li>Box 4 asdfsadf sadfas dfsaff</li>
+          <li>Box 5</li>
+          <li>Box 5</li>
+          <li>Box 4 asdfsadf sadfas dfsaff</li>
+          <li>Box 4 asdfsadf sadfas dfsaff</li>
+          <li>Box 5</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+    <script src="jQuery.pack.js"></script>
+    <script src="boxArrange.jQuery.js"></script>
+    <script>
+      $('.js-listWrap').BoxArrange({
+        'margin': '8'
+      });
+    </script>
+  </body>
+</html>
