@@ -1,14 +1,15 @@
 # JQuery Plugin
 
-This is the custom made jQuery plugin to center align any element on dom
+This is the custom made jQuery plugin to Arrange different Height box on dom
 
 ## Getting Started
 
 Follow the instruction to include and use of this plugin.
 * Include jQuery - Optional
 * Include jQuery.pack.js - Mandatory
-* Include center.jQuery.js - Mandatory
-* Use element (class or id) selector to call pluign method AlignCenter() - Mandatory
+* Include boxArrange.jQuery.js - Mandatory
+* Use element (class or id) selector to call pluign method BoxArrange() - Mandatory
+* You can pass {'margin': anynumber} as parameter, by default it will take 8px as margin - Optional
 
 
 ## Example
@@ -16,12 +17,15 @@ Follow the instruction to include and use of this plugin.
 ```
   <html>
     <body>
-      <div class="js-center center-align-element"></div>
+      <div class="list-wrap js-listWrap"></div>
 
       <script src="jQuery.pack.js"></script>
       <script src="center.jQuery.js"></script>
       <script>
-        $('.js-center').AlignCenter();
+        $('.js-listWrap').BoxArrange(); // Without margin params
+        $('.js-listWrap').BoxArrange({
+          'margin': '10'
+        }); // With margin params
       </script>
     </body>
   </html>

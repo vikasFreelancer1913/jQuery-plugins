@@ -1,7 +1,7 @@
 jQuery.fn.BoxArrange = function (margin) {
 
   var element = this;
-  var marginParam = parseInt(margin.margin);
+  var marginParam = margin ? parseInt(margin.margin) : 8;
   
   $(window).load(function() {
     applyArrangement();
