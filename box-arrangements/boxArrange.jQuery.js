@@ -20,6 +20,10 @@ jQuery.fn.BoxArrange = function (margin) {
         return tempInt;
     }
 
+    $(element).find('li').each(function(index, item){
+      item.setAttribute('id', 'ele-'+index);
+    });
+
     function applyArrangement () {
       var windowWidth = $(window).width();
       var windowHeight = $(window).height();
@@ -37,7 +41,7 @@ jQuery.fn.BoxArrange = function (margin) {
       var firstChildElement = $(element).find('li:first');
       var elePaddingLeftRight = getInt($(element).find('li:first').css('padding-left')) + getInt($(element).find('li:first').css('padding-right'));
       var elePaddingTopBottom = getInt($(element).find('li:first').css('padding-top')) + getInt($(element).find('li:first').css('padding-bottom'));
-      var eleInOneRow = Math.floor(elementWidth / (firstChildElement.width() + elePaddingLeftRight + marginParam));
+      var eleInOneRow = placedNumber = Math.floor(elementWidth / (firstChildElement.width() + elePaddingLeftRight + marginParam));
       var howMuchRow = Math.ceil(totalELementLen / eleInOneRow);
       var counter = 0;
       var coordinateTop = 0;
@@ -48,23 +52,27 @@ jQuery.fn.BoxArrange = function (margin) {
         var currentWidth = item.clientWidth;
         var currentHeight = item.clientHeight;
         var coordinateLeft = elementCount * (currentWidth + marginParam);
-        
-        if(counter < eleInOneRow) {
-          $(item).css({
-            "left": coordinateLeft,
-            "top": elsePart ? $(element).find("li:nth-child("+ (counter+1) +")").height() + getInt($(element).find("li:nth-child("+ (counter+1) +")").css("top")) + elePaddingTopBottom + marginParam : coordinateTop
-          });
-          counter++
-        }else {
-          coordinateTop = currentHeight + marginParam;
-          counter = 0;
-          $(item).css({
-            "left": counter,
-            "top": $(element).find("li:nth-child("+ (counter+1) +")").height() + getInt($(element).find("li:nth-child("+ (counter+1) +")").css("top")) + elePaddingTopBottom + marginParam
-          });
-          elsePart = true;
-          counter++;
-        }
+        var newPositionTop = (placedNumber - eleInOneRow) + 1;
+
+          if(counter < eleInOneRow) {
+            $(item).css({
+              "left": coordinateLeft,
+              "top": elsePart ? $(element).find("li:nth-child("+ (newPositionTop) +")").height() + getInt($(element).find("li:nth-child("+ (newPositionTop) +")").css("top")) + elePaddingTopBottom + marginParam : coordinateTop
+            });
+            if(elsePart) {
+              placedNumber++;
+            }
+            counter++;
+          }else {
+            counter = 0;
+            $(item).css({
+              "left": counter,
+              "top": $(element).find("li:nth-child("+ (newPositionTop) +")").height() + getInt($(element).find("li:nth-child("+ (newPositionTop) +")").css("top")) + elePaddingTopBottom + marginParam
+            });
+            elsePart = true;
+            counter++;
+            placedNumber++;
+          }
       });
     }
   });
