@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Jquery Plugin - Align a Diamonds shape properly in different screens</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <style type="text/css">
+      h1 {
+        text-align: center;
+      }
+      .innerCont {
+        border: 1px solid red;
+      }
+      .list-wrap {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+      .list-wrap li {
+        padding: 50px 10px;
+        width: 100px;
+        height: 100px;
+        margin: 5px;
+        background: #fff;
+        display: inline-block;
+        vertical-align: top;
+        text-align: center;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        -webkit-transform-origin: 39% 83%;
+        -webkit-transition: all 0.3s ease-in-out;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Jquery Plugin - Box Arrangements</h1>
+      <div class="innerCont">
+        <ul class="list-wrap js-listWrap">
+          <li>Box 1</li>
+          <li>Box 2</li>
+          <li>Box 3</li>
+          <li>Box 4</li>
+          <li>Box 5</li>
+          <li>Box 6</li>
+          <li>Box 7</li>
+          <li>Box 8</li>
+          <li>Box 9</li>
+          <li>Box 10</li>
+          <li>Box 11</li>
+          <li>Box 12</li>
+          <li>Box 13</li>
+          <li>Box 14</li>
+          <li>Box 15</li>
+          <li>Box 16</li>
+          <li>Box 17</li>
+          <li>Box 18</li>
+          <li>Box 19</li>
+          <li>Box 20</li>
+          <li>Box 21</li>
+          <li>Box 22</li>
+          <li>Box 24</li>
+          <li>Box 25</li>
+          <li>Box 26</li>
+          <li>Box 27</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+    <script src="jQuery.pack.js"></script>
+    <script src="diamondArrange.jQuery.js"></script>
+    <script>
+      $('.js-listWrap').DiamondArrange({
+        'margin': '18'
+      });
+    </script>
+  </body>
+</html>
