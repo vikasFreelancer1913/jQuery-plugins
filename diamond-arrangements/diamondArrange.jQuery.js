@@ -46,9 +46,10 @@ jQuery.fn.DiamondArrange = function (margin) {
       var elePaddingLeftRight = getInt($(element).find('li:first').css('padding-left')) + getInt($(element).find('li:first').css('padding-right'));
       var elePaddingTopBottom = getInt($(element).find('li:first').css('padding-top')) + getInt($(element).find('li:first').css('padding-bottom'));
       var eleDiagonalLength = Math.floor(getElementOuterWidth($(element).find('li:first').width(), elePaddingLeftRight) * Math.sqrt(2)) + marginParam;
-      var eleInOneRow = placedNumber = prevEleCount = Math.round(parentWidth / eleDiagonalLength);
+      var eleInOneRow = placedNumber = Math.round(parentWidth / eleDiagonalLength);
       var howMuchRow = Math.ceil(totalELementLen / eleInOneRow);
       var counter = 0;
+      var prevEleCount = 1;
       var alertNateNum = true;
       var elementTopValue = 0;
 
@@ -62,7 +63,8 @@ jQuery.fn.DiamondArrange = function (margin) {
               'left': coordinateLeft,
               'top': coordinateTop
             });
-            counter++; 
+            counter++;
+            prevEleCount++;
           }else {
             coordinateTop = (Math.round((($(element).find('li:nth-child('+prevEleCount+')').offset().top + eleDiagonalLength) - marginParam) / 2)) - 8;
             coordinateLeft = Math.round(((eleDiagonalLength / 2) + marginParam) - marginParam);
