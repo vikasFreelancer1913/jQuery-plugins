@@ -10,7 +10,9 @@ Follow the instruction to include and use of this plugin.
 * Include boxArrange.jQuery.js - Mandatory
 * Use element (class or id) selector to call pluign method BoxArrange() - Mandatory
 * You can pass {'margin': anynumber} as parameter, by default it will take 8px as margin - Optional
-
+* There is no default widht of the boxes cause here I have given user a freedom to choose their own width in css,
+  but while giving width they need to check the accurate width so that the whole grid gets covered with the proper number of boxes.
+  Otherwise it might be possible that in right side of grid some space left.
 
 ## Example
 
