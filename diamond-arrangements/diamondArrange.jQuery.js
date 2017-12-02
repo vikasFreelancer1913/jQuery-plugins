@@ -49,14 +49,14 @@ jQuery.fn.DiamondArrange = function (margin) {
       var eleInOneRow = placedNumber = Math.round(parentWidth / eleDiagonalLength);
       var howMuchRow = Math.ceil(totalELementLen / eleInOneRow);
       var counter = 0;
-      var prevEleCount = 1;
-      var alertNateNum = true;
+      var prevEleCount = 0;
+      var alerternateNum = true;
       var elementTopValue = 0;
 
       $(element).find('li').each(function(index, item) {
         var coordinateLeft;
         var coordinateTop = elementTopValue;
-        if(alertNateNum) {
+        if(alerternateNum) {
           coordinateLeft = counter * eleDiagonalLength;
           if(counter < eleInOneRow) {
             $(item).css({
@@ -67,12 +67,12 @@ jQuery.fn.DiamondArrange = function (margin) {
             prevEleCount++;
           }else {
             coordinateTop = (Math.round((($(element).find('li:nth-child('+prevEleCount+')').offset().top + eleDiagonalLength) - marginParam) / 2)) - 8;
-            coordinateLeft = Math.round(((eleDiagonalLength / 2) + marginParam) - marginParam);
+            coordinateLeft = Math.round(eleDiagonalLength / 2);
             $(item).css({
               'left': coordinateLeft,
               'top': coordinateTop
             });
-            alertNateNum = false;
+            alerternateNum = false;
             prevEleCount++;
             counter = 0;
             eleInOneRow = eleInOneRow - 2;
