@@ -66,7 +66,8 @@ jQuery.fn.DiamondArrange = function (margin) {
             counter++;
             prevEleCount++;
           }else {
-            coordinateTop = (Math.round((($(element).find('li:nth-child('+prevEleCount+')').offset().top + eleDiagonalLength) - marginParam) / 2)) - 8;
+            // coordinateTop = (Math.round((($(element).find('li:nth-child('+prevEleCount+')').offset().top + eleDiagonalLength) - marginParam) / 2)) - 8;
+            coordinateTop = (getInt($(element).find('li:nth-child('+prevEleCount+')')[0].style.top) + Math.round(eleDiagonalLength / 2));
             coordinateLeft = Math.round(eleDiagonalLength / 2);
             $(item).css({
               'left': coordinateLeft,
@@ -90,12 +91,13 @@ jQuery.fn.DiamondArrange = function (margin) {
           }else {
             $(item).css({
               'left': 0,
-              'top': getInt($(element).find('li:nth-child('+prevEleCount+')')[0].style.top) * 2
+              'top': (getInt($(element).find('li:nth-child('+prevEleCount+')')[0].style.top) + Math.round(eleDiagonalLength / 2))
             });
-            elementTopValue = getInt($(element).find('li:nth-child('+prevEleCount+')')[0].style.top) * 2;
+            elementTopValue = (getInt($(element).find('li:nth-child('+prevEleCount+')')[0].style.top) + Math.round(eleDiagonalLength / 2));
             eleInOneRow = placedNumber;
-            alertNateNum = true;
+            alerternateNum = true;
             counter = 1;
+            prevEleCount++;
           }
         }
       });
